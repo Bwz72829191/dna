@@ -1,3 +1,27 @@
+<script src="sweetalert2.js"></script>
+<script>
+	var success = function(){
+            Swal.fire({
+                type: 'success',
+                title: 'Успешно!',
+                html: 'Фраза успешно найдена'
+            });
+        }
+        var errorno = function(){
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                html: 'Вы ничего не ввели'
+            });
+        }
+        var error = function(){
+            Swal.fire({
+                type: 'error',
+                title: 'Oops...',
+                html: 'Ничего не найдено'
+            });
+        }
+    </script>
 <script type="text/javascript">
 var lastResFind=""; // последний удачный результат
 var copy_page=""; // копия страницы в ихсодном виде
@@ -12,16 +36,16 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
   if (obj) {
     textToFind = TrimStr(obj.value);//обрезаем пробелы
   } else {
-    alert("Введенная фраза не найдена");
+    error()
     return;
   }
   if (textToFind == "") {
-    alert("Вы ничего не ввели");
+    errorno()
     return;
   }
  
   if(document.body.innerHTML.indexOf(textToFind)=="-1")
-  alert("Ничего не найдено, проверьте правильность ввода!");
+  error()
  
   if(copy_page.length>0)
         document.body.innerHTML=copy_page;
@@ -32,6 +56,7 @@ function FindOnPage(inputId) {//ищет текст на странице, в п
   document.body.innerHTML = document.body.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" style='background:red'>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
   lastResFind=textToFind; // сохраняем фразу для поиска, чтобы в дальнейшем по ней стереть все ссылки
   window.location = '#'+textToFind;//перемещаем скрол к последнему найденному совпадению
+  success()
  }
 </script>
 <body bgcolor="black">
@@ -469,8 +494,31 @@ Updated at 15/11/2022<br> <br>
 												</p>
 												<hr/>
 												<p>
+													Номер -> +79139433823<br>
+Страна -> Россия<br>
+Регион -> Новосибирская область<br>
+Оператор -> МТС<br><br>
+
+ИФ -> Алина Павловская <br><br>
+##Это не деанон##<br>
+##Просто показываем людям скамера чтобы никто не повёлся##<br><br>
+Ссылка на пост -> <a href="https://deanon.ml/alina-Pavlovskaya">click</a>
 												</p>
 												<hr/>
+												<p>
+													Номера -> +7-966-369-13-01, +7-917-508-17-21<br>
+ИФ -> Глеб Осипов<br>
+<br> <br>
+Айпи -> 213.87.131.254<br>
+Город -> Москва<br>
+Координаты -> 55.7483, 37.6171<br>
+Адрес -> г Москва, р-н Якиманка, Софийская наб, д 18<br><br>
+Ссылка на пост -> <a href="https://deanon.ml/unknown-clown">click</a>
+													</p>
+													<hr/>
+													<p>
+														</p>
+														<hr/>
 									</font>
 									</center>
 </body>
