@@ -5,8 +5,18 @@
 			</head>
 			<body>
 				<center><h1>Страница закрыта на технические работы</h1></center>
-			                <script>
-					location.replace('https://deanon.ml/search')
-					</script>	
-                                </body>
+				<script src="sweetalert2.js"></script>
+<script>
+	var warning = function(){
+            Swal.fire({
+                type: 'warning',
+                title: 'Ошибка!',
+                html: 'Сейчас на нашем сайте ведутся технические работы\nНо вы можете воспользоваться запасным сайтом\nhttps://deanon.cf/'
+            });
+        }
+    </script>
+				<script>
+					warning()
+					</script>
+				</body>
 				</html>
